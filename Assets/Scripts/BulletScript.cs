@@ -1,0 +1,41 @@
+using UnityEngine;
+
+public class BulletScript : MonoBehaviour
+{
+    private Vector3 mousePosition;
+    private Camera mainCamera;
+    private Rigidbody2D rigidbody;
+    public float force;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        rigidbody = GetComponent<Rigidbody2D>();
+        mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = mousePosition - transform.position;
+        Vector3 rotation = transform.position - mousePosition;
+        rigidbody.linearVelocity = new Vector2(direction.x, direction.y).normalized * force;
+
+        //bullet rotated towards mouse
+        float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    /*
+    private void OnTriggerEnter(Collider other) //parameter of colliding with other object
+    {
+        if (other.transform.tag == "Enemy") //if other object from parameter is tagged enemy
+        {
+            other.GetComponent<Enemy>().takeDamage(damage); //execute takeDamage (see enemy script)
+            Destroy(this.gameObject); //destroy projectile
+        }
+    }
+    */
+}
