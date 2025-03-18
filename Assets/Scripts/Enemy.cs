@@ -5,7 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
-
+    private float distance;
+   
     public float health = 100.0f;
 
     public float damage = 25.0f;
@@ -29,10 +30,17 @@ public class Enemy : MonoBehaviour
     //Enemy movement = beeline for player
     private void Movement()
     {
+        /*
+        distance = Vector2.Distance(transform.position, player.transform.position);
+        Vector2 direction = player.transform.position - transform.position;
+
+        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+        /////////
         if(GameManager.instance.player)
             transform.LookAt(GameManager.instance.player.transform.position);
 
         transform.position += transform.up * moveSpeed * Time.deltaTime;
+        */
     }
 
     /*
