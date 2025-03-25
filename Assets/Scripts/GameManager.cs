@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour {
 
         //Check if instance already exists
         if (instance == null)
-
             //if not, set instance to this
             instance = this;
 

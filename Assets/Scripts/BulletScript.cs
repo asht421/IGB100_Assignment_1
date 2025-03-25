@@ -7,6 +7,9 @@ public class BulletScript : MonoBehaviour
     private Rigidbody2D rigidbody;
     public float force;
 
+    [SerializeField] private float lifeTime = 5.0f;
+    [SerializeField] public float damage = 50.0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +23,8 @@ public class BulletScript : MonoBehaviour
         //bullet rotated towards mouse
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+
+        Destroy(this.gameObject, lifeTime);
     }
 
     // Update is called once per frame
@@ -28,14 +33,14 @@ public class BulletScript : MonoBehaviour
         
     }
 
-    /*
-    private void OnTriggerEnter(Collider other) //parameter of colliding with other object
+    
+    void OnTriggerEnter2D(Collider2D other) //parameter of colliding with other object
     {
         if (other.transform.tag == "Enemy") //if other object from parameter is tagged enemy
         {
-            other.GetComponent<Enemy>().takeDamage(damage); //execute takeDamage (see enemy script)
+            other.GetComponent<EnemyNew>().takeDamage(damage); //execute takeDamage (see enemy script)
             Destroy(this.gameObject); //destroy projectile
         }
     }
-    */
+    
 }

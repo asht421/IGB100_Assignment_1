@@ -7,6 +7,11 @@ public class Player : MonoBehaviour
     public float moveSpeed = 10.0f;
     private Vector2 position;
 
+    [SerializeField] private float health = 100.0f;
+    public float damage = 30.0f;
+
+    public GameObject deathEffect;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -59,8 +64,8 @@ public class Player : MonoBehaviour
             position.y = -GameManager.instance.yBoundary;
     }
 
-    /*
-     * public void takeDamage(float damage)
+    
+    public void takeDamage(float damage)
     {
         health -= damage; // armour calculations could go here
 
@@ -70,5 +75,4 @@ public class Player : MonoBehaviour
             Instantiate(deathEffect, transform.position, transform.rotation);
         }
     }
-    */
 }

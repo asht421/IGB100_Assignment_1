@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+     /*
     public float moveSpeed = 5.0f;
     private float distance;
    
@@ -40,10 +41,10 @@ public class Enemy : MonoBehaviour
             transform.LookAt(GameManager.instance.player.transform.position);
 
         transform.position += transform.up * moveSpeed * Time.deltaTime;
-        */
+        
     }
 
-    /*
+    
     public void takeDamage(float damage)
     {
         health -= damage; // armour calculations could go here
