@@ -24,10 +24,11 @@ public class WaveSpawner : MonoBehaviour
         currentWave = waves[currentWaveNumber];
         SpawnWave();
         GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if(totalEnemies.Length == 0 && !canSpawn && currentWaveNumber+1 != waves.Length)
+        // if there are no enemies left, + canspawn = False + max number of waves not achieved:
+        if (totalEnemies.Length == 0 && !canSpawn && currentWaveNumber+1 != waves.Length)
         {
             // waveName.text = waves[currentWaveNumber + 1].waveName
-
+            spawnNextWave();
         }
     }
 
@@ -57,7 +58,5 @@ public class WaveSpawner : MonoBehaviour
                 canSpawn = false;
             }
         }
-        
-        
     }
 }

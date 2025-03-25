@@ -6,16 +6,15 @@ public class EnemyNew : MonoBehaviour
 
     public float xSpeed;
     public float ySpeed;
-
-    private bool canShoot;
-    [SerializeField] private float fireRate;
     [SerializeField] private float health = 50.0f;
-
-    [SerializeField] private float enemy1DamageToPlayer = 10.0f;
-    [SerializeField] private float damageRate = 0.2f;
-    [SerializeField] private float damageTime;
-
     public GameObject deathEffect;
+
+    public bool canShoot;
+    public GameObject bullet;
+    [SerializeField] public float fireRate = 2.0f;
+    [SerializeField] private float bulletSpeed;
+
+    [SerializeField] public float collisionDamage = 50.0f;
 
     private void Awake()
     { 
@@ -25,28 +24,17 @@ public class EnemyNew : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-    }
+        if (canShoot)
+            InvokeRepeating("Shoot", fireRate, fireRate);
+
+        Destroy(gameObject, 20);
+;    }
 
     // Update is called once per frame
     void Update()
     {
         rb.linearVelocity = new Vector2(xSpeed, ySpeed*-1);
     }
-
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<Player>().takeDamage(fallingEnemyDamage);
-            Death();
-        }
-    }
-
-    void Death()
-    {
-        Destroy(this.gameObject);
-    }*/
 
     public void takeDamage(float damage)
     {
@@ -59,14 +47,22 @@ public class EnemyNew : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    /*
 
-    void OnTriggerStay(Collider other)
+    // Damage Player on Collision
+    void OnTriggerEnter2D(Collider2D other) //parameter of colliding with other object
     {
-        if (other.transform.tag == "Player" && Time.time > damageTime) //the Time.time bit helps balance in case of poor framerate (dont want player to take damage every frame)
+        if (other.transform.tag == "Player") //if other object from parameter is tagged player
         {
-            other.transform.GetComponent<Player>().takeDamage(damage);
-            damageTime = Time.time + damageRate;
+            other.GetComponent<Player>().takeDamage(collisionDamage); //execute takeDamage (see player script)
+            GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
+            Destroy(effect, 0.333f);
+            Destroy(this.gameObject);
         }
-    }*/
+    }
+    
+    void Shoot()
+    {
+        GameObject temp = (GameObject) Instantiate(bullet, transform.position, Quaternion.identity);
+        temp.GetComponent<EnemyBullet>().Follow();
+    }
 }

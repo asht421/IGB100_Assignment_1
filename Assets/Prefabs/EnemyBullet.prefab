@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4560714780664352196}
   - component: {fileID: 1593875643952421696}
-  - component: {fileID: 1248675080842116464}
   - component: {fileID: 809223234168449508}
   - component: {fileID: -9088112766729712389}
   - component: {fileID: -6615302683667439603}
+  - component: {fileID: -6934069636865459140}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.8490566, g: 0.04405483, b: 0.04405483, a: 1}
+  m_Color: {r: 0.115012914, g: 0.8867924, b: 0.079476655, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -91,21 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1248675080842116464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6725436305150930776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1607f823f3c4d4a458a16b566d7e1342, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 10
-  lifeTime: 5
-  damage: 10
 --- !u!50 &809223234168449508
 Rigidbody2D:
   serializedVersion: 5
@@ -200,7 +185,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.9803922, g: 0, b: 0, a: 1}
+      key0: {r: 0.1137255, g: 0.8862746, b: 0.078431375, a: 1}
       key1: {r: 0.23529413, g: 0.23529413, b: 0.23529413, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -296,3 +281,20 @@ PolygonCollider2D:
       - {x: 0.099999994, y: 0.055}
       - {x: 0.049999997, y: 0.099999994}
   m_UseDelaunayMesh: 0
+--- !u!114 &-6934069636865459140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6725436305150930776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6e729f6bf4f7f46b0a99392e0ae3e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 500
+  damage: 50
+  player: {fileID: 0}
+  bullet: {fileID: 6725436305150930776}
+  speed: 2

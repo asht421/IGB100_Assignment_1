@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public float damage = 30.0f;
 
     public GameObject deathEffect;
+    [SerializeField] public bool gameOver = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -71,8 +72,10 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
+            GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
+            Destroy(effect, 0.333f);
             Destroy(this.gameObject);
-            Instantiate(deathEffect, transform.position, transform.rotation);
+            gameOver = true;
         }
     }
 }

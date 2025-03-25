@@ -4,7 +4,7 @@ public class BulletScript : MonoBehaviour
 {
     private Vector3 mousePosition;
     private Camera mainCamera;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rbody;
     public float force;
 
     [SerializeField] private float lifeTime = 5.0f;
@@ -14,11 +14,11 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        rigidbody = GetComponent<Rigidbody2D>();
+        rbody = GetComponent<Rigidbody2D>();
         mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = mousePosition - transform.position;
         Vector3 rotation = transform.position - mousePosition;
-        rigidbody.linearVelocity = new Vector2(direction.x, direction.y).normalized * force;
+        rbody.linearVelocity = new Vector2(direction.x, direction.y).normalized * force;
 
         //bullet rotated towards mouse
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
@@ -33,7 +33,6 @@ public class BulletScript : MonoBehaviour
         
     }
 
-    
     void OnTriggerEnter2D(Collider2D other) //parameter of colliding with other object
     {
         if (other.transform.tag == "Enemy") //if other object from parameter is tagged enemy
