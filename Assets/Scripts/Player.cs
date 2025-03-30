@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public float damage = 30.0f;
 
     public GameObject deathEffect;
-    [SerializeField] public bool gameOver = false;
+    public bool gameOver = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,14 +40,6 @@ public class Player : MonoBehaviour
         //Left movement
         if (Input.GetKey("a"))
             position.x -= moveSpeed * Time.deltaTime;
-
-        //Up movement
-        if (Input.GetKey("w"))
-            position.y += moveSpeed * Time.deltaTime;
-
-        //Down movement
-        if (Input.GetKey("s"))
-            position.y -= moveSpeed * Time.deltaTime;
     }
 
     private void Boundary()
@@ -57,12 +49,6 @@ public class Player : MonoBehaviour
             position.x = GameManager.instance.xBoundary;
         else if (position.x < -GameManager.instance.xBoundary)
             position.x = -GameManager.instance.xBoundary;
-
-        //Y Boundary Checks
-        if (position.y > GameManager.instance.yBoundary)
-            position.y = GameManager.instance.yBoundary;
-        else if (position.y < -GameManager.instance.yBoundary)
-            position.y = -GameManager.instance.yBoundary;
     }
 
     
@@ -75,7 +61,7 @@ public class Player : MonoBehaviour
             GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(effect, 0.333f);
             Destroy(this.gameObject);
-            gameOver = true;
+            GameManager.manager.GameOver();
         }
     }
 }

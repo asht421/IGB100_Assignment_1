@@ -2,11 +2,14 @@
 using System.Collections;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour {
 
     //Singleton Setup
     public static GameManager instance = null;
+    public static GameManager manager;
 
     public float xBoundary = 8.5f;
     public float yBoundary = 5f;
@@ -17,8 +20,13 @@ public class GameManager : MonoBehaviour {
     public Text lootText;
     private int loot = 10000;
 
+    public GameObject deathScreen;
+    public TextMeshProUGUI finalLootText;
+    public TextMeshProUGUI highScoreText;
+
     // Awake Checks - Singleton setup
     void Awake() {
+        manager = this;
 
         //Check if instance already exists
         if (instance == null)
@@ -34,6 +42,7 @@ public class GameManager : MonoBehaviour {
     void Start()
     {
         SetLootText();
+        deathScreen.SetActive(false);
     }
 
     void SetLootText()
@@ -46,5 +55,21 @@ public class GameManager : MonoBehaviour {
         loot += lootToAdd;
         Debug.Log(loot);
         SetLootText();
+    }
+
+    public void GameOver()
+    {
+        deathScreen.SetActive(true);
+        finalLootText.text = "Remaining Loot: " + loot.ToString() + "/10000";
+    }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Menu(string name)
+    {
+        SceneManager.LoadScene(name);
     }
 }

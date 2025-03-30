@@ -8,27 +8,23 @@ public class EnemyNew : MonoBehaviour
     public float ySpeed;
     [SerializeField] private float health = 50.0f;
     public GameObject deathEffect;
+    [SerializeField] private float lifeTime = 20.0f;
 
-    public bool canShoot;
-    public GameObject bullet;
-    [SerializeField] public float fireRate = 2.0f;
-    [SerializeField] private float bulletSpeed;
+    [SerializeField] private float collisionDamage = 50.0f;
 
-    [SerializeField] public float collisionDamage = 50.0f;
+    public AudioSource deathAudio;
 
     private void Awake()
     { 
-            rb= GetComponent<Rigidbody2D>();
+        rb= GetComponent<Rigidbody2D>();
+        deathAudio= GetComponent<AudioSource>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (canShoot)
-            InvokeRepeating("Shoot", fireRate, fireRate);
-
-        Destroy(gameObject, 20);
-;    }
+        Destroy(gameObject, lifeTime); ;
+;   }
 
     // Update is called once per frame
     void Update()
@@ -42,6 +38,7 @@ public class EnemyNew : MonoBehaviour
 
         if (health <= 0)
         {
+            deathAudio.Play();
             GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(effect, 0.333f);
             Destroy(this.gameObject);
@@ -53,16 +50,11 @@ public class EnemyNew : MonoBehaviour
     {
         if (other.transform.tag == "Player") //if other object from parameter is tagged player
         {
+            deathAudio.Play();
             other.GetComponent<Player>().takeDamage(collisionDamage); //execute takeDamage (see player script)
             GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(effect, 0.333f);
             Destroy(this.gameObject);
         }
-    }
-    
-    void Shoot()
-    {
-        GameObject temp = (GameObject) Instantiate(bullet, transform.position, Quaternion.identity);
-        temp.GetComponent<EnemyBullet>().Follow();
     }
 }

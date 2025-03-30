@@ -3,33 +3,32 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
+    [SerializeField] private float moveSpeed = 1.0f;
     [SerializeField] private float lifeTime = 5.0f;
-    [SerializeField] public float damage = 50.0f;
+    public float damage = 50.0f;
 
     public GameObject player;
-    [SerializeField] private float speed = 1.0f;
-    private float distance;
+    private Rigidbody2D rbody;
 
     void Start()
     {
-        
+        Destroy(this.gameObject, lifeTime);
+        rbody = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        Vector3 direction = player.transform.position - transform.position;
+        rbody.linearVelocity = new Vector2(direction.x, direction.y).normalized * moveSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Movement();
     }
-
-    public void Follow()
+    
+    private void Movement()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 direction = player.transform.position - transform.position;
-        direction.Normalize();
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-        transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+        transform.position += Time.deltaTime * moveSpeed * transform.forward;
     }
 
     void OnTriggerEnter2D(Collider2D other) //parameter of colliding with other object

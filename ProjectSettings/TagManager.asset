@@ -9,7 +9,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
@@ -42,5 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Everything Over Water
+    uniqueID: 17225593
+    locked: 0
   m_RenderingLayers:
   - Default
+  - Particle

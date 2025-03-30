@@ -30,6 +30,10 @@ public class WaveSpawner : MonoBehaviour
             // waveName.text = waves[currentWaveNumber + 1].waveName
             spawnNextWave();
         }
+        if(currentWaveNumber+1 == waves.Length)
+        {
+            GameManager.manager.GameOver();
+        }
     }
 
     void spawnNextWave()

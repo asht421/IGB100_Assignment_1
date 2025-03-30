@@ -11,12 +11,18 @@ public class Shooting : MonoBehaviour
     private float timer;
     public float timeBetweenFiring;
 
+    public AudioSource coinShoot;
+    void Awake()
+    {
+        coinShoot.GetComponent<AudioSource>();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -43,6 +49,7 @@ public class Shooting : MonoBehaviour
             canFire = false;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
             GameManager.instance.TakePoints(-10);
+            coinShoot.Play();
         }
     }
 }
