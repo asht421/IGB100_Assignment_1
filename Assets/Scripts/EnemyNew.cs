@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EnemyNew : MonoBehaviour
 {
@@ -23,13 +24,18 @@ public class EnemyNew : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Destroy(gameObject, lifeTime); ;
+        Destroy(gameObject, lifeTime);
 ;   }
 
     // Update is called once per frame
     void Update()
     {
-        rb.linearVelocity = new Vector2(xSpeed, ySpeed*-1);
+        rb.linearVelocity = new Vector2(xSpeed, ySpeed * -1);
+
+        if(transform.position.y < -6)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void takeDamage(float damage)

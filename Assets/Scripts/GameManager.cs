@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour {
 
     void SetLootText()
     {
-        lootText.text = "Loot Remaining: " + loot.ToString() +"/10000";
+        lootText.text = "Loot Remaining: $" + loot.ToString();
     }
 
     public void TakePoints(int lootToAdd)
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour {
     public void GameOver()
     {
         deathScreen.SetActive(true);
-        finalLootText.text = "Remaining Loot: " + loot.ToString() + "/10000";
+        finalLootText.text = "Remaining Loot: $" + loot.ToString();
     }
 
     public void Replay()

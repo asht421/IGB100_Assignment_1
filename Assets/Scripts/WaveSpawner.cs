@@ -14,7 +14,7 @@ public class WaveSpawner : MonoBehaviour
     public Transform[] spawnPoints;
 
     private Wave currentWave;
-    private int currentWaveNumber;
+    public int currentWaveNumber;
     private float nextSpawnTime;
 
     private bool canSpawn = true; 

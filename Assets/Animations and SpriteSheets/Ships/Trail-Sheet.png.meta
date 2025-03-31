@@ -1,19 +1,34 @@
 fileFormatVersion: 2
-guid: 6c3f6db782776c14d8b83f63587ef781
+guid: f5269656c48b1d04e91bbeb1885ab9e0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1324818980224704719
-    second: PirateShip-Sheet_0
+      213: 7850674998264060529
+    second: Trail-Sheet_0
   - first:
-      213: 6833242671324972043
-    second: PirateShip-Sheet_1
+      213: -6597067051679027300
+    second: Trail-Sheet_1
   - first:
-      213: -592154163517695741
-    second: PirateShip-Sheet_2
+      213: 8243014770035411959
+    second: Trail-Sheet_2
   - first:
-      213: 2861426172648483872
-    second: PirateShip-Sheet_3
+      213: -1997114062807318728
+    second: Trail-Sheet_3
+  - first:
+      213: 1953461273557694616
+    second: Trail-Sheet_4
+  - first:
+      213: 603684951806176514
+    second: Trail-Sheet_5
+  - first:
+      213: -6084307363140909776
+    second: Trail-Sheet_6
+  - first:
+      213: 3176287519848474015
+    second: Trail-Sheet_7
+  - first:
+      213: -342312522070407407
+    second: Trail-Sheet_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,11 +120,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PirateShip-Sheet_0
+      name: Trail-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15b0d43315923824488c299128f4d95d
-      internalID: -202190726
+      spriteID: 14d6ce6c720369a409cdf8b5b59cac76
+      internalID: -58037615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PirateShip-Sheet_1
+      name: Trail-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -146,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28806f7cc3ebe4c41bd2322323d2bc7e
-      internalID: -763526175
+      spriteID: 3e9498585a9dd9a4385f23f0b03a623b
+      internalID: -1323205650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PirateShip-Sheet_2
+      name: Trail-Sheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -168,30 +196,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a513f3b884f21e45b3acd6248f0f977
-      internalID: 149868248
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PirateShip-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34a25b565209742459881fd99d685af7
-      internalID: -34301606
+      spriteID: 646ada4a566a81948a3830ad82340749
+      internalID: 894759091
       vertices: []
       indices: 
       edges: []
@@ -200,7 +206,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1cd71715befb4b54096e234417fa1e58
+    spriteID: f56ef329440a91e4ba365cd96f3b1934
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +216,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PirateShip-Sheet_0: -202190726
-      PirateShip-Sheet_1: -763526175
-      PirateShip-Sheet_2: 149868248
-      PirateShip-Sheet_3: -34301606
+      Trail-Sheet_0: -58037615
+      Trail-Sheet_1: -1323205650
+      Trail-Sheet_2: 894759091
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

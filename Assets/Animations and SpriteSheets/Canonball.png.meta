@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: aa6cb021cb714c046bec885ba8412515
+guid: bf11784b32e38734eb429373a2613117
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -501483613900695351
-    second: Ship2-Sheet_0
-  - first:
-      213: -4216272802617813222
-    second: Ship2-Sheet_1
-  - first:
-      213: -6712818388430323715
-    second: Ship2-Sheet_2
-  - first:
-      213: -4599322073581900290
-    second: Ship2-Sheet_3
+      213: 667733546477560903
+    second: Canonball_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ship2-Sheet_0
+      name: Canonball_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 26
+        y: 26
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,74 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9c815c46f4f5a09f0800000000000000
-      internalID: -501483613900695351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship2-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a1713db893acc75c0800000000000000
-      internalID: -4216272802617813222
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship2-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dff76e3ed3747d2a0800000000000000
-      internalID: -6712818388430323715
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship2-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: efda98c31fceb20c0800000000000000
-      internalID: -4599322073581900290
+      spriteID: 744286a6f14444900800000000000000
+      internalID: 667733546477560903
       vertices: []
       indices: 
       edges: []
@@ -200,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8a53d63d28e39d94492fc88f43581f22
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ship2-Sheet_0: -501483613900695351
-      Ship2-Sheet_1: -4216272802617813222
-      Ship2-Sheet_2: -6712818388430323715
-      Ship2-Sheet_3: -4599322073581900290
+      Canonball_0: 667733546477560903
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
