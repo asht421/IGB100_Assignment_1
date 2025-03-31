@@ -5,12 +5,13 @@ using UnityEngine.UI;
 [ExecuteInEditMode()]
 public class ProgressBar : MonoBehaviour
 {
-    public int maximum;
-    public Image mask;
+    private int maximum;
+    [SerializeField] Image mask;
 
-    public WaveSpawner waveSpawner; //input script as variable to access
-    public int currentWave;
+    [SerializeField] WaveSpawner waveSpawner; //input script as variable to access
+    [SerializeField] int currentWave;
 
+    [SerializeField] Text percentageText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,5 +31,6 @@ public class ProgressBar : MonoBehaviour
     {
         float fillAmount = (float)currentWave / (float)maximum;
         mask.fillAmount = fillAmount;
+        percentageText.text = (fillAmount*100).ToString() + "%";
     }
 }

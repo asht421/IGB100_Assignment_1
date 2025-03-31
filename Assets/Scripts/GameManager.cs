@@ -20,9 +20,10 @@ public class GameManager : MonoBehaviour {
     public Text lootText;
     private int loot = 10000;
 
+    [SerializeField] GameObject gameUI;
+    [SerializeField] GameObject waveSpawn;
     public GameObject deathScreen;
     public TextMeshProUGUI finalLootText;
-    public TextMeshProUGUI highScoreText;
 
     // Awake Checks - Singleton setup
     void Awake() {
@@ -43,7 +44,9 @@ public class GameManager : MonoBehaviour {
     {
         SetLootText();
         deathScreen.SetActive(false);
+        gameUI.SetActive(true);
     }
+
 
     void SetLootText()
     {
@@ -53,14 +56,22 @@ public class GameManager : MonoBehaviour {
     public void TakePoints(int lootToAdd)
     {
         loot += lootToAdd;
-        Debug.Log(loot);
         SetLootText();
     }
 
     public void GameOver()
     {
+        /*// destroy any remaining enemies in gameOver
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach(GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }*/
+        // Death Menu
         deathScreen.SetActive(true);
+        gameUI.SetActive(false);
         finalLootText.text = "Remaining Loot: $" + loot.ToString();
+        Destroy(waveSpawn);
     }
 
     public void Replay()
@@ -70,6 +81,7 @@ public class GameManager : MonoBehaviour {
 
     public void Menu(string name)
     {
+        SceneManager.LoadScene(name);
         SceneManager.LoadScene(name);
     }
 }
