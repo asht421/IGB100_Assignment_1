@@ -23,7 +23,9 @@ public class GameManager : MonoBehaviour {
     [SerializeField] GameObject gameUI;
     [SerializeField] GameObject waveSpawn;
     public GameObject deathScreen;
-    public TextMeshProUGUI finalLootText;
+    public GameObject winScreen;
+    public Text finalLootText;
+    public Text finalLootTextWin;
     public bool gameOver = false;
 
     // Awake Checks - Singleton setup
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour {
     {
         SetLootText();
         deathScreen.SetActive(false);
+        winScreen.SetActive(false);
         gameUI.SetActive(true);
     }
 
@@ -66,18 +69,33 @@ public class GameManager : MonoBehaviour {
         // Death Menu
         deathScreen.SetActive(true);
         gameUI.SetActive(false);
+        // update score text
         finalLootText.text = "Remaining Loot: $" + loot.ToString();
         Destroy(waveSpawn);
     }
 
-    public void Replay(string name)
+    public void YouWin()
     {
-        SceneManager.LoadScene(name);
+        gameOver = true;
+
+        winScreen.SetActive(true);
+        gameUI.SetActive(false);
+
+        finalLootTextWin.text = "You escaped with:" +
+            " $ " + loot.ToString();
+        Destroy(waveSpawn);
+    }
+
+    public void Replay()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 
     public void Menu(string name)
     {
         SceneManager.LoadScene(name);
         SceneManager.LoadScene(name);
+        gameOver = false;
     }
 }

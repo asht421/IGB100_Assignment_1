@@ -18,12 +18,13 @@ public class EnemyNew : MonoBehaviour
     private void Awake()
     { 
         rb= GetComponent<Rigidbody2D>();
-        deathAudio.GetComponent<AudioSource>();
+        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        deathAudio.GetComponent<AudioSource>();
         Destroy(gameObject, lifeTime);
 ;   }
 
@@ -41,7 +42,6 @@ public class EnemyNew : MonoBehaviour
     public void takeDamage(float damage)
     {
         health -= damage; // armour calculations could go here
-        deathAudio.Play();
 
         if (health <= 0)
         {

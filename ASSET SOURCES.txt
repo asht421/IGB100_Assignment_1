@@ -1,10 +1,16 @@
-ASSET SOURCES
+SOURCES FOR ASSETS USED
 
 Music by FreeGroove at https://pixabay.com/music/build-up-scenes-pirate-adventures-112150/
 
-Coin Sound Effect: https://pixabay.com/sound-effects/coin-flip-88793/
+Coin Shoot Sound: https://pixabay.com/sound-effects/coin-flip-88793/
 
-Fonts: https://fonts.google.com/specimen/Jersey+20?query=pixel
+Coin Pickup Sound: https://pixabay.com/sound-effects/retro-coin-1-236677/
 
-Explosion Assets: https://bdragon1727.itch.io/free-effect-bullet-impact-explosion-32x32
+Ring Pickup Sound: https://pixabay.com/sound-effects/coin-2-89099/
+
+Font: https://fonts.google.com/specimen/Jersey+20?query=pixel
+
+Explosion Sound: https://pixabay.com/sound-effects/large-underwater-explosion-190270/
+
+Explosion Art Assets: https://bdragon1727.itch.io/free-effect-bullet-impact-explosion-32x32
 

@@ -44,10 +44,7 @@ public class LootBag : MonoBehaviour
 
             //tag object to identify
             if(droppedItem.lootName == "Ring")
-            {
                 lootGameObject.tag = "Ring";
-                points = 12;
-            }
                 
             if (droppedItem.lootName == "Coin")
                 lootGameObject.tag = "Coin";

@@ -7,7 +7,7 @@ public class Loot : ScriptableObject
     public string lootName;
     public int dropChance;
     public int value;
-
+    public AudioSource pickupAudio;
     public Loot(string lootName, int dropChance, int value)
     {
         this.lootName = lootName;

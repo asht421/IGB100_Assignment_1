@@ -4,10 +4,9 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     private string currentSceneName;
-    public void ChangeScene(string name)
+    public void ChangeScene()
     {
-        currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
+        SceneManager.LoadScene("Game");
     }
 
     public void ExitGame()

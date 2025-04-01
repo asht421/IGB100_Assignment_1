@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3968854526110016240}
   - component: {fileID: 2074134466349743070}
   - component: {fileID: 3421327577293852408}
+  - component: {fileID: 7468154313070257764}
   m_Layer: 0
   m_Name: LootPrefab
   m_TagString: Untagged
@@ -50,6 +51,12 @@ MonoBehaviour:
   xSpeed: 0
   ySpeed: 2
   points: 0
+  coinValue: 15
+  ringValue: 30
+  soundEffect: {fileID: 0}
+  pickupAudio: {fileID: 0}
+  ringAudio: {fileID: 0}
+  lootScript: {fileID: 0}
 --- !u!212 &3968854526110016240
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -94,7 +101,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3338749442709606003, guid: 2544d0149f6eb7c4ba63837f4ce64d61, type: 3}
+  m_Sprite: {fileID: 3659599985904461297, guid: 759663c31ada5a2488d2c153d52ced68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -170,7 +177,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.1, y: 0.1}
+    oldSize: {x: 0.24, y: 0.24}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -178,17 +185,114 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.055, y: 0.12}
-      - {x: -0.105, y: 0.08}
-      - {x: -0.105, y: -0.08}
-      - {x: -0.065, y: -0.12}
-      - {x: 0.095, y: -0.12}
-      - {x: 0.105, y: -0.08}
-      - {x: 0.105, y: 0.099999994}
-      - {x: 0.074999996, y: 0.12}
+    - - {x: -0.052190818, y: 0.10969966}
+      - {x: -0.10406361, y: 0.04909897}
+      - {x: -0.10874558, y: -0.03879863}
+      - {x: -0.03784457, y: -0.1031449}
+      - {x: 0.043498278, y: -0.11157244}
+      - {x: 0.11155478, y: -0.04254421}
+      - {x: 0.10968197, y: 0.03726156}
+      - {x: 0.05346293, y: 0.10314491}
     - - {x: -0.005, y: 0.02}
       - {x: 0.015, y: 0.03}
       - {x: 0.015, y: -0.02}
       - {x: 0.005, y: -0.03}
       - {x: -0.005, y: -0.03}
   m_UseDelaunayMesh: 0
+--- !u!82 &7468154313070257764
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7929736169242468228}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 509b7410810807543a64f25274fe0feb, type: 3}
+  m_Resource: {fileID: 8300000, guid: 509b7410810807543a64f25274fe0feb, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

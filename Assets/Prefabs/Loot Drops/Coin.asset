@@ -16,3 +16,4 @@ MonoBehaviour:
   lootName: Coin
   dropChance: 90
   value: 15
+  pickupAudio: {fileID: 7870716535118210880, guid: d1728621ca526ac4d89fc1fc9e0c3eec, type: 3}

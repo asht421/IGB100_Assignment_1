@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootSprite: {fileID: 4004708080983207187, guid: 8635536afad1cb94884545467c6a8d1f, type: 3}
   lootName: Ring
-  dropChance: 40
+  dropChance: 30
   value: 50
+  pickupAudio: {fileID: 8242867747381108646, guid: afb870063b535544e9bd718dc02e49e2, type: 3}

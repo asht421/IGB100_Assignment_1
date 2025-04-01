@@ -32,7 +32,7 @@ public class WaveSpawner : MonoBehaviour
         }
         if(currentWaveNumber+1 >= waves.Length)
         {
-            GameManager.manager.GameOver();
+            GameManager.manager.YouWin();
         }
     }
 
