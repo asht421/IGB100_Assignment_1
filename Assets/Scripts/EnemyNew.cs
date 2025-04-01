@@ -18,7 +18,7 @@ public class EnemyNew : MonoBehaviour
     private void Awake()
     { 
         rb= GetComponent<Rigidbody2D>();
-        deathAudio= GetComponent<AudioSource>();
+        deathAudio.GetComponent<AudioSource>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -41,13 +41,13 @@ public class EnemyNew : MonoBehaviour
     public void takeDamage(float damage)
     {
         health -= damage; // armour calculations could go here
+        deathAudio.Play();
 
         if (health <= 0)
         {
             deathAudio.Play();
-            GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
-            Destroy(effect, 0.333f);
-            Destroy(this.gameObject);
+            GetComponent<LootBag>().InstantiateLoot(transform.position);
+            Death();
         }
     }
 
@@ -58,9 +58,14 @@ public class EnemyNew : MonoBehaviour
         {
             deathAudio.Play();
             other.GetComponent<Player>().takeDamage(collisionDamage); //execute takeDamage (see player script)
-            GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
-            Destroy(effect, 0.333f);
-            Destroy(this.gameObject);
+            Death();
         }
+    }
+
+    void Death()
+    {
+        GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
+        Destroy(effect, 0.333f);
+        Destroy(this.gameObject);
     }
 }

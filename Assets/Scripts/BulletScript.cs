@@ -30,7 +30,10 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //ensures bullets cannot damage ships as they spawn
+        if(transform.position.y > 5){
+            Destroy(this.gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other) //parameter of colliding with other object

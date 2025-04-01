@@ -51,5 +51,11 @@ public class Shooting : MonoBehaviour
             GameManager.instance.TakePoints(-10);
             coinShoot.Play();
         }
+
+        //stops shooting when game over
+        if (GameManager.instance.gameOver == true)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

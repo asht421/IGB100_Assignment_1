@@ -24,7 +24,7 @@ public class EnemyShoot : MonoBehaviour
 
     void Shoot()
     {
-        if(timer > fireTime && transform.position.y > -3.5)
+        if(timer > fireTime && transform.position.y > -3)
         {
             Instantiate(bullet, bulletPosition.position, Quaternion.identity);
             timer = 0;

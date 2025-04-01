@@ -172,8 +172,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.086135864
-        value: 0.11926651
+        time: 0.10713959
+        value: 0.11927223
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -271,15 +271,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.049999997, y: 0.099999994}
-      - {x: -0.099999994, y: 0.044999998}
-      - {x: -0.099999994, y: -0.03}
-      - {x: -0.074999996, y: -0.085}
-      - {x: -0.065, y: -0.099999994}
-      - {x: 0.06, y: -0.099999994}
-      - {x: 0.099999994, y: -0.074999996}
-      - {x: 0.099999994, y: 0.055}
-      - {x: 0.049999997, y: 0.099999994}
+    - - {x: -0.016249463, y: 0.053392105}
+      - {x: -0.048570566, y: 0.012856565}
+      - {x: -0.045356125, y: -0.020356923}
+      - {x: -0.029999208, y: -0.031963393}
+      - {x: -0.01839203, y: -0.050177667}
+      - {x: 0.01982075, y: -0.04696339}
+      - {x: 0.05017767, y: -0.020356208}
+      - {x: 0.045356207, y: 0.019642211}
+      - {x: 0.021070924, y: 0.051784843}
   m_UseDelaunayMesh: 0
 --- !u!114 &-6934069636865459140
 MonoBehaviour:
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6e729f6bf4f7f46b0a99392e0ae3e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 30
+  moveSpeed: 40
   lifeTime: 20
   damage: 10
   player: {fileID: 0}

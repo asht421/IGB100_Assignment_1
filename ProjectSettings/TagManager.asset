@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - GameOver
+  - Coin
+  - Ring
   layers:
   - Default
   - TransparentFX
@@ -44,6 +47,9 @@ TagManager:
     locked: 0
   - name: Everything Over Water
     uniqueID: 17225593
+    locked: 0
+  - name: UI
+    uniqueID: 407784511
     locked: 0
   m_RenderingLayers:
   - Default

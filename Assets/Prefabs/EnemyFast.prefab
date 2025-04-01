@@ -120,6 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3098775742266717560}
   - component: {fileID: 5837293094806967780}
+  - component: {fileID: -2354692316425246519}
   - component: {fileID: 3417011919407102314}
   - component: {fileID: 3651093997923268093}
   - component: {fileID: 6993694344399335633}
@@ -142,7 +143,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.4521725, y: -0.23787606, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1502580473961881938}
@@ -161,12 +162,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 0
-  ySpeed: 2
+  ySpeed: 3
   health: 10
   deathEffect: {fileID: 4358935743046946536, guid: b3ae6bccbf090524f8efbe7cf71286fb, type: 3}
   lifeTime: 20
   collisionDamage: 30
   deathAudio: {fileID: -6942051182376882863}
+--- !u!114 &-2354692316425246519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3774275952688452321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a258604c971ef4193e106ab2dc1594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  droppedItemPrefab: {fileID: 7929736169242468228, guid: 0a315c172896fb94895d488ff4583263, type: 3}
+  lootList:
+  - {fileID: 11400000, guid: 7f098d50d403d0945b4800d0b51ee9a1, type: 2}
 --- !u!212 &3417011919407102314
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -268,9 +284,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+    - - {x: 0.1534279, y: 0.25060555}
+      - {x: 0.07917088, y: 0.3215051}
+      - {x: -0.0728997, y: 0.32339773}
+      - {x: -0.15428829, y: 0.26154974}
+      - {x: -0.14561892, y: -0.22357625}
+      - {x: 0.0024150014, y: -0.31392065}
+      - {x: 0.15044045, y: -0.22116548}
   m_UseDelaunayMesh: 0
 --- !u!50 &6993694344399335633
 Rigidbody2D:

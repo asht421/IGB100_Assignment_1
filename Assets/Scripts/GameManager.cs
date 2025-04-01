@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] GameObject waveSpawn;
     public GameObject deathScreen;
     public TextMeshProUGUI finalLootText;
+    public bool gameOver = false;
 
     // Awake Checks - Singleton setup
     void Awake() {
@@ -61,12 +62,7 @@ public class GameManager : MonoBehaviour {
 
     public void GameOver()
     {
-        /*// destroy any remaining enemies in gameOver
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach(GameObject enemy in enemies)
-        {
-            Destroy(enemy);
-        }*/
+        gameOver = true;
         // Death Menu
         deathScreen.SetActive(true);
         gameUI.SetActive(false);
@@ -74,9 +70,9 @@ public class GameManager : MonoBehaviour {
         Destroy(waveSpawn);
     }
 
-    public void Replay()
+    public void Replay(string name)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(name);
     }
 
     public void Menu(string name)
