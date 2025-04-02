@@ -31,6 +31,6 @@ public class ProgressBar : MonoBehaviour
     {
         float fillAmount = (float)currentWave / (float)maximum;
         mask.fillAmount = fillAmount;
-        percentageText.text = (fillAmount * 100).ToString() + "% to escape";
+        percentageText.text = (fillAmount * 100).ToString() + "% towards escape";
     }
 }

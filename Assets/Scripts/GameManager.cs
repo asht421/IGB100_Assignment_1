@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 
     //Score Variables
     public Text lootText;
-    private int loot = 10000;
+    [SerializeField] private int loot = 10000;
 
     [SerializeField] GameObject gameUI;
     [SerializeField] GameObject waveSpawn;
@@ -51,6 +51,13 @@ public class GameManager : MonoBehaviour {
         gameUI.SetActive(true);
     }
 
+    void Update()
+    {
+        if (loot <= 0)
+        {
+            GameOver();
+        }
+    }
 
     void SetLootText()
     {
